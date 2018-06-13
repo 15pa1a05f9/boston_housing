@@ -12104,7 +12104,7 @@ Standard deviation of prices: $165171.13154429474
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>  R2 score 0.923 which means the extent to which dependent variable is predictable is 92 percent.</p>
+<p><strong>Answer:</strong>  R2 score is 0.923 .It means  92.3% of variation is explained by the target variable and it is very high .</p>
 
 </div>
 </div>
@@ -12180,7 +12180,7 @@ Standard deviation of prices: $165171.13154429474
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Splitting dataset helps to apply algorithm to train the model with training set and can test that the data with training set. If data is not splitted properly there may be a chance of underfitting and overfitting. Oveftitting models the training data very well where as underfitting neither models training data nor generalizes it.</p>
+<p>Splitting dataset helps to apply algorithm to train the model with training set and can test that the data with training set. We need to split the data into a training and testing set, as we need that last testing set for the final model evaluation. Testing data set helps to validate that the training has happened efficiently in terms of either accuracy, or precision so on. Overfitting models the training data very well where as underfitting neither models training data nor generalizes it.</p>
 
 </div>
 </div>
@@ -12261,8 +12261,8 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>max_depth=1 : It is high bias model .In graph testing score increases to only 0.4 which is low and training score decreases to 0.4 . Model doesnt fit the data.Adding more training points doesnt improve dataset beacause it is underfitting</p>
-<p>max_depth=3: It is good model because testing score is increasing and training score also changes accordingly .It fits the data.In this model training error and testing error curves converge at low point.Adding more training points may make it more better model.</p>
+<p>max_depth=1 : It is high bias model .In graph testing score increases to only 0.4 which is low and training score decreases to 0.4 . Model doesnt fit the data.Adding more training points doesnt improve dataset beacause it is underfitting.</p>
+<p>max_depth=3: It is good model because testing score is increasing and training score is also high .It fits the data.In this model training error and testing error curves converge at low point.Adding training points doesnt improve as  the testing curve above 300 data points seems to be constant.</p>
 <p>max_depth=6 : It is having high variance as curves donot get closer.Training error is very low and testing error is relatively high Adding training points doesnt improve anything because graph is overfitting</p>
 <p>max_depth =10 : It is having high variance as curves donot get closer adding more points doesnt improve this model because of overfitting.</p>
 
@@ -12332,7 +12332,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>when a model is trained with maximum depth of 1 it suffers from high bias and when a model is trained with maximum depth of 10 it suffer from high variance . For maximum depth 1 ,there is no substantial gap between the training and testing scores, so it is underfitting .For maximum depth 10 ,there is a substantial gap between the training and testing scores which means it models the training set well but cannot generalize instances.</p>
+<p>when a model is trained with maximum depth of 1 it suffers from high bias and when a model is trained with maximum depth of 10 it suffer from high variance . For maximum depth 1 ,both testing score and training score are less ,so it is underfitting .For maximum depth 10 ,there is a substantial gap between the training and testing scores which means it models the training set well but cannot generalize instances.</p>
 
 </div>
 </div>
@@ -12355,7 +12355,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>max_depth of 3  model is the best model which generalizes the unseen data .The training error and testing error coverge at low point.Testing score is increasing and training score also changes accordingly</p>
+<p>max_depth of 3  model is the best model which generalizes the unseen data .The training error and testing error coverge at low point.Testing score is increasing and training score also changes accordingly .</p>
 
 </div>
 </div>
@@ -12415,8 +12415,7 @@ Example for training a support vector machine we use grid search cross validatio
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>k-fold cross-validation is a technique where the original sample is randomly partitioned into k equal sized subsamples. A single subsample is used as testing data for, and the remaining k − 1 subsamples are used as training data.This process is then repeated k times (the folds), with each of the k subsamples used exactly once as the testing data. The above  are then averaged to produce a single result.</p>
-<p>All observations are used for both training and validation, and each observation is used for validation exactly once. We ensure that we are using the entire dataset for training and validation.</p>
+<p>k-fold cross-validation is a technique where the original sample is randomly partitioned into k equal sized subsamples. A single subsample is used as testing data for, and the remaining k − 1 subsamples are used as training data.This process is then repeated k times (the folds), with each of the k subsamples used exactly once as the testing data. The above  are then averaged to produce a single result. Without k-fold cross-validation the  grid search may select  combinations that perform very well on a specific train-test split.</p>
 
 </div>
 </div>
@@ -12670,9 +12669,17 @@ Predicted selling price for Client 3&#39;s home: $921,900.00
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p>prices to recommend:</p>
-<p>selling price for Client 1's home: $411,096.00.  Selling price for Client 2's home: $219,961.54.  Selling price for Client 3's home: $955,500.00</p>
-<p>The prices seem reasonable . For client 1, it seems reasonable due to the average poverty level and student-to-teacher ratio.For client 2, it seems reasonable due to the higher poverty level and student-to-teacher ratio.
-The house's price from client 3 seems reasonable as  poverty level is very low  and has a high number of rooms.</p>
+<p>selling price for Client 1's home: $411,096.00.</p>
+<p>Selling price for Client 2's home: $219,961.54.</p>
+<p>Selling price for Client 3's home: $955,500.00</p>
+<p>Findings:
+Minimum price: $105000.0</p>
+<p>Maximum price: $1024800.0</p>
+<p>Mean price: $454342.9447852761</p>
+<p>Median price $438900.0</p>
+<p>Standard deviation of prices: $165171.13154429474</p>
+<p>The prices seem reasonable .The houses' prices from client 1 and client 2 are below the mean and median prices. For client 1, it seems reasonable due to the average poverty level and student-to-teacher ratio.For client 2, it seems reasonable due to the higher poverty level and student-to-teacher ratio.
+The house's price from client 3 seems reasonable as  poverty level is very low  and has a high number of rooms. It is  above the mean and median prices.</p>
 
 </div>
 </div>
